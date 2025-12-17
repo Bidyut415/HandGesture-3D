@@ -57,7 +57,7 @@ const material = new THREE.PointsMaterial({
     blending: THREE.AdditiveBlending,
     depthWrite: false,
     transparent: true,
-    opacity: 1.0,  // Full opacity
+    opacity: 0.7,  // Reduced opacity for softer look
     sizeAttenuation: true
 });
 

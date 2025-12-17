@@ -13,7 +13,7 @@ export const INITIAL_SPREAD = 50;        // Starting spread area
 export const INITIAL_HUE_MIN = 0.5;      // Start hue (0.5 = cyan)
 export const INITIAL_HUE_MAX = 0.6;      // End hue (0.6 = blue)
 export const INITIAL_SATURATION = 0.8;   // Color intensity
-export const INITIAL_LIGHTNESS = 0.5;    // Brightness level
+export const INITIAL_LIGHTNESS = 0.35;   // Brightness level (lower = dimmer)
 
 // CAMERA - 3D view settings
 export const CAMERA_POSITION_Z = 30;     // Distance from particles
