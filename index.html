@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture 3D - Happy New Year 2025!</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Import map for ES modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./js/three.module.js"
+        }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle shifted" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>🎆 Shapes</h2>
+
+        <ul class="shape-list" id="shapeList">
+            <li class="shape-item active" data-shape="sphere">
+                <span class="shape-icon">⭕</span>
+                <span class="shape-name">Sphere</span>
+                <div class="shape-desc">Uniform ball - particles on sphere surface</div>
+            </li>
+            <li class="shape-item" data-shape="heart">
+                <span class="shape-icon">❤️</span>
+                <span class="shape-name">Heart</span>
+                <div class="shape-desc">Parametric heart curve formula</div>
+            </li>
+            <li class="shape-item" data-shape="saturn">
+                <span class="shape-icon">🪐</span>
+                <span class="shape-name">Saturn</span>
+                <div class="shape-desc">Planet core with flat ring</div>
+            </li>
+            <li class="shape-item" data-shape="cube">
+                <span class="shape-icon">🔲</span>
+                <span class="shape-name">Cube</span>
+                <div class="shape-desc">Particles on 6 faces of a box</div>
+            </li>
+            <li class="shape-item" data-shape="spiral">
+                <span class="shape-icon">🌀</span>
+                <span class="shape-name">Spiral</span>
+                <div class="shape-desc">Helix winding upward</div>
+            </li>
+            <li class="shape-item" data-shape="dna">
+                <span class="shape-icon">🧬</span>
+                <span class="shape-name">DNA</span>
+                <div class="shape-desc">Double helix with connecting bars</div>
+            </li>
+            <li class="shape-item" data-shape="star">
+                <span class="shape-icon">⭐</span>
+                <span class="shape-name">Star</span>
+                <div class="shape-desc">5-pointed star shape</div>
+            </li>
+            <li class="shape-item" data-shape="wave">
+                <span class="shape-icon">🌊</span>
+                <span class="shape-name">Wave</span>
+                <div class="shape-desc">Sine wave surface</div>
+            </li>
+            <li class="shape-item" data-shape="text2025">
+                <span class="shape-icon">🎊</span>
+                <span class="shape-name">2025</span>
+                <div class="shape-desc">Happy New Year text!</div>
+            </li>
+            <li class="shape-item" data-shape="fireworks">
+                <span class="shape-icon">🎆</span>
+                <span class="shape-name">Fireworks</span>
+                <div class="shape-desc">5 explosion bursts</div>
+            </li>
+        </ul>
+
+        <h3>✋ Gestures</h3>
+        <div class="gesture-item">
+            <span class="gesture-icon">✌️</span>
+            <span>Pinch = Cycle shapes</span>
+        </div>
+        <div class="gesture-item">
+            <span class="gesture-icon">🖐️</span>
+            <span>Spread = Scale size</span>
+        </div>
+        <div class="gesture-item">
+            <span class="gesture-icon">↔️</span>
+            <span>Move = Color & rotation</span>
+        </div>
+    </div>
+
+    <div id="loading">✨ Initializing New Year Magic... ✨</div>
+
+    <div class="instructions">
+        Click shapes in sidebar or PINCH to cycle • SPREAD to scale • MOVE for colors
+    </div>
+
+    <video id="input_video"></video>
+    <canvas id="output_canvas"></canvas>
+
+    <script>
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.sidebar-toggle');
+            sidebar.classList.toggle('hidden');
+            toggle.classList.toggle('shifted');
+        }
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
